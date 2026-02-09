@@ -3,84 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>神秘网盘解谜游戏</title>
-    <link rel="stylesheet" href="style.css">
+    <title>云端密钥 | 引导页</title>
+    <link rel="stylesheet" href="guideStyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div id="app">
-        <!-- 应用内容将通过JavaScript动态生成 -->
-    </div>
+    <!-- 主容器 -->
+    <div class="container">
+        <!-- 页头 -->
+        <div class="header">
+            <h1>丈夫的网盘</h1>
+            <p>一个关于信任与秘密的互动故事</p>
+        </div>
+        
+        <!-- 第一部分：故事背景 -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-book-open"></i>
+                <h2>故事背景</h2>
+            </div>
+            <div class="section-content">
+                <p>你是<b class="highlight">艾米</b>，28岁的室内设计师，与男友林澈同居两年。表面上看，你们感情稳定——他体贴，细心，会在你加班时送宵夜，记得所有纪念日。</p>
+                <p>但最近几个月，一些微小却无法忽视的变化悄然发生：他接电话时会刻意走开，手机永远屏幕朝下放置，半夜你醒来常发现他在阳台低声通话。问起时，他总是简单带过。</p>
+                <p>三天前，他匆忙收拾行李说要紧急出差，甚至没告诉你目的地。现在已是第四天，他完全失联。在焦虑中整理房间时，你无意间发现丈夫的<b class="highlight">云盘登录界面</b>停留在电脑屏幕上。。。</p>
 
-    <!-- 文件预览模态框模板 -->
-    <template id="file-preview-template">
-        <div class="modal-overlay">
-            <div class="modal">
-                <div class="modal-header">
-                    <h3 class="modal-title"></h3>
-                    <button class="close-btn">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <pre class="file-content"></pre>
-                </div>
             </div>
         </div>
-    </template>
-
-    <!-- 加密文件密码输入模态框模板 -->
-    <template id="pwd-prompt-template">
-        <div class="modal-overlay password-overlay">
-            <div class="modal password-modal">
-                <div class="modal-header">
-                    <h3 class="modal-title">
-                        <i class="fas fa-lock"></i>
-                        <i class="pwd-file-name">加密文件: ${file.name}</i>
-                    </h3>
-                    <button class="close-btn">&times;</button>
+        
+        <!-- 第二部分：游戏玩法与目标 -->
+        <div class="section">
+            <div class="section-title">
+                <i class="fas fa-gamepad"></i>
+                <h2>游戏玩法与目标</h2>
+            </div>
+            <div class="section-content">
+                <p>你将通过探索林澈的云盘文件，逐步揭开一个悬疑重重的真相。</p>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-bullseye"></i> 游戏目标</h3>
+                    <ul>
+                        <li><b class="highlight">调查网盘：</b> 调查林澈网盘</li>
+                        <li><b class="highlight">探索真相：</b> 查明林澈去向</li>
+                    </ul>
                 </div>
-                <div class="modal-body">
-                    <div class="password-form" data-file-id="${file.id}">
-                        <div class="file-info">
-                            <i class="fas fa-file-lock"></i>
-                            <div>
-                                <span class="password-hint"><strong>提示：</strong>${file.encryption.hint}</span>
-                            </div>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-info-circle"></i> 游玩须知</h3>
+                    <ul>
+                        <li>这是一个<b class="highlight">线性叙事</b>故事，你的探索将逐步推进剧情</li>
+                        <li>仔细观察文件的日期、内容和占用空间</li>
+                        <li>通过网盘的<b class="highlight">搜索</b>功能可以发现被隐藏文件</li>
+                        <li>预计游戏时长：<b class="highlight">2小时</b></li>
+                    </ul>
+                </div>
+                
+                <p class="warning"><i class="fas fa-exclamation-triangle"></i> 注意：游戏中的某些内容可能会引起情绪波动。</p>
+            </div>
+        </div>
+        
+        <!-- 第三部分：开始游戏 -->
+        <div class="section play-section">
+            <!-- <div class="section-title" style="justify-content: center;">
+                <i class="fas fa-play"></i>
+                <h2>开始游戏</h2>
+            </div> -->
+            
+            <div class="section-content">
+                <p>现在，一切准备就绪。你将进入林澈的私人数字空间。</p>
+                
+                <p>一旦开始，你可能无法再用原来的眼光看待你们的关系。</p>
+                
+                <p style="margin: 25px 0; color: #6ba3ff; font-size: 1.1rem;">
+                    <i class="fas fa-key"></i> 准备好窥探爱人最深的秘密了吗？
+                </p>
+                
+                <button class="start-button" id="startBtn">
+                    <i class="fas fa-cloud-upload-alt"></i> 进入云盘
+                </button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>《云端密钥》互动故事体验 | 悬疑 · 情感 · 解谜</p>
+            <p>© 2026 成俺杨工作室 | 本故事纯属虚构</p>
+        </div>
+    </div>
+    
+    <!-- 模态登录窗口 -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-user-lock"></i> SecureBox 登录</h2>
+                <button class="close-btn" id="closeModalBtn">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="login-form">
+                    <div class="form-group">
+                        <label for="username"><i class="fas fa-user"></i> 用户名</label>
+                        <div class="input-with-icon">
+                            <input type="text" id="username" value="linche@securebox.com" readonly>
                         </div>
-                        
-                        <div class="attempts-info" id="attempts-info" style="display: none;">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            剩余尝试次数: <span id="remaining-attempts">3</span>
-                        </div>
-                        
-                        <div class="input-group">
-                            <label for="password-input">
-                                <i class="fas fa-key"></i> 输入密码: <span id="pwd-hint"> </span>
-                            </label>
-                            <input type="password" 
-                                   id="password-input" 
-                                   class="password-input"
-                                   placeholder="请输入密码..."
-                                   autocomplete="off">
-                            <button id="toggle-password" class="toggle-btn" type="button">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-key"></i> 密码</label>
+                        <div class="input-with-icon">
+                            <input type="password" id="password" value="20190921">
+                            <button class="toggle-password" id="togglePasswordBtn">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </div>
-                        
-                        <div class="button-group">
-                            <button id="submit-password" class="btn btn-primary">
-                                <i class="fas fa-unlock"></i> 解锁文件
-                            </button>
-                            <button id="cancel-password" class="btn btn-outline">
-                                取消
-                            </button>
-                        </div>
                     </div>
+                    
+                    <button class="login-btn" id="loginBtn">登录</button>
+                </div>
+                
+                <div class="login-status" id="loginStatus"></div>
+                
+                <div class="login-info">
+                    <p><i class="fas fa-info-circle"></i> 登录信息：</p>
+                    <p>• 账号已自动填充（来自便利贴）</p>
+                    <p>• 密码已自动填充（你们相遇的日子）</p>
+                    <p>• 最后登录：2023-10-24 14:37 来自本设备</p>
                 </div>
             </div>
         </div>
-    </template>
+    </div>
 
-    <script type="module" src="main.js"></script>
-    <!-- <script src="app.js"></script> -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取DOM元素
+            const startBtn = document.getElementById('startBtn');
+            const loginModal = document.getElementById('loginModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const togglePasswordBtn = document.getElementById('togglePasswordBtn');
+            const passwordInput = document.getElementById('password');
+            const loginBtn = document.getElementById('loginBtn');
+            const loginStatus = document.getElementById('loginStatus');
+            
+            // 开始按钮点击事件 - 打开模态窗口
+            startBtn.addEventListener('click', function() {
+                // 播放点击音效
+                // playClickSound();
+                
+                // 显示模态窗口
+                loginModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // 防止背景滚动
+            });
+            
+            // 关闭模态窗口
+            closeModalBtn.addEventListener('click', closeModal);
+            
+            // 点击模态窗口外部也关闭
+            loginModal.addEventListener('click', function(event) {
+                if (event.target === loginModal) {
+                    closeModal();
+                }
+            });
+            
+            // 切换密码显示/隐藏
+            togglePasswordBtn.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type');
+                const icon = togglePasswordBtn.querySelector('i');
+                
+                if (type === 'password') {
+                    passwordInput.setAttribute('type', 'text');
+                    icon.className = 'fas fa-eye-slash';
+                    togglePasswordBtn.setAttribute('title', '隐藏密码');
+                } else {
+                    passwordInput.setAttribute('type', 'password');
+                    icon.className = 'fas fa-eye';
+                    togglePasswordBtn.setAttribute('title', '显示密码');
+                }
+            });
+            
+            // 登录按钮点击事件
+            loginBtn.addEventListener('click', function() {
+                const password = passwordInput.value;
+                // 正确密码：20190921
+                if (password === '20190921') {
+
+                    // 禁用登录按钮，显示加载状态
+                    loginBtn.disabled = true;
+                    loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 登录中...';
+                    
+                    // 模拟登录过程
+                    setTimeout(function() {
+                        // 显示成功状态
+                        loginStatus.className = 'login-status success';
+                        loginStatus.innerHTML = '<i class="fas fa-check-circle"></i> 登录成功！正在进入云盘...';
+                        
+                        // 继续模拟加载
+                        setTimeout(function() {
+                            // 关闭模态窗口
+                            closeModal();
+                            
+                            // 显示成功提示
+                            showSuccessMessage();
+                        }, 1500);
+                    }, 1200);
+    
+                } else {
+                    // 密码错误
+                    passwordInput.style.borderColor = '#ff6b6b';
+                    passwordInput.value = '';
+                    passwordInput.placeholder = '密码错误，请重新输入';
+                    
+                    setTimeout(() => {
+                        passwordInput.style.borderColor = '#4a8eff';
+                        passwordInput.placeholder = '输入密码';
+                    }, 1500);
+                }
+
+                // // 禁用登录按钮，显示加载状态
+                // loginBtn.disabled = true;
+                // loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 登录中...';
+                
+                // // 模拟登录过程
+                // setTimeout(function() {
+                //     // 显示成功状态
+                //     loginStatus.className = 'login-status success';
+                //     loginStatus.innerHTML = '<i class="fas fa-check-circle"></i> 登录成功！正在进入云盘...';
+                    
+                //     // 继续模拟加载
+                //     setTimeout(function() {
+                //         // 关闭模态窗口
+                //         closeModal();
+                        
+                //         // 显示成功提示
+                //         showSuccessMessage();
+                //     }, 1500);
+                // }, 1200);
+            });
+            
+            // 关闭模态窗口的函数
+            function closeModal() {
+                loginModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // 恢复背景滚动
+                
+                // 重置登录状态
+                resetLoginForm();
+            }
+            
+            // 重置登录表单
+            function resetLoginForm() {
+                loginBtn.disabled = false;
+                loginBtn.innerHTML = '登录';
+                loginStatus.className = 'login-status';
+                loginStatus.innerHTML = '';
+                
+                // 确保密码是隐藏状态
+                passwordInput.setAttribute('type', 'password');
+                const icon = togglePasswordBtn.querySelector('i');
+                icon.className = 'fas fa-eye';
+                togglePasswordBtn.setAttribute('title', '显示密码');
+            }
+            
+            // 显示成功消息
+            function showSuccessMessage() {
+                window.location.href = "netDisk.html";
+            }
+            
+            // 播放点击音效
+            function playClickSound() {
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    oscillator.frequency.setValueAtTime(523.25, audioContext.currentTime); // C5
+                    oscillator.frequency.exponentialRampToValueAtTime(659.25, audioContext.currentTime + 0.1); // E5
+                    
+                    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+                    
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.2);
+                } catch (e) {
+                    console.log("音频上下文不支持");
+                }
+            }
+        });
+    </script>
 </body>
 </html>

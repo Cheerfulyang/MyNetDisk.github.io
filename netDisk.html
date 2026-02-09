@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神秘网盘解谜游戏</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 应用内容将通过JavaScript动态生成 -->
+    </div>
+
+    <!-- 文件预览模态框模板 -->
+    <template id="file-preview-template">
+        <div class="modal-overlay">
+            <div class="modal">
+                <div class="modal-header">
+                    <h3 class="modal-title"></h3>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <pre class="file-content"></pre>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- 加密文件密码输入模态框模板 -->
+    <template id="pwd-prompt-template">
+        <div class="modal-overlay password-overlay">
+            <div class="modal password-modal">
+                <div class="modal-header">
+                    <h3 class="modal-title">
+                        <i class="fas fa-lock"></i>
+                        <i class="pwd-file-name">加密文件: ${file.name}</i>
+                    </h3>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="password-form" data-file-id="${file.id}">
+                        <div class="file-info">
+                            <i class="fas fa-file-lock"></i>
+                            <div>
+                                <span class="password-hint"><strong>提示：</strong>${file.encryption.hint}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="attempts-info" id="attempts-info" style="display: none;">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            剩余尝试次数: <span id="remaining-attempts">3</span>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="password-input">
+                                <i class="fas fa-key"></i> 输入密码: <span id="pwd-hint"> </span>
+                            </label>
+                            <input type="password" 
+                                   id="password-input" 
+                                   class="password-input"
+                                   placeholder="请输入密码..."
+                                   autocomplete="off">
+                            <button id="toggle-password" class="toggle-btn" type="button">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="button-group">
+                            <button id="submit-password" class="btn btn-primary">
+                                <i class="fas fa-unlock"></i> 解锁文件
+                            </button>
+                            <button id="cancel-password" class="btn btn-outline">
+                                取消
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script type="module" src="main.js"></script>
+    <!-- <script src="app.js"></script> -->
+</body>
+</html>
