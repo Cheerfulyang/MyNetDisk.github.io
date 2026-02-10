@@ -113,7 +113,7 @@ function renderSearchFileGrid() {
             <div class="empty-search">
                 <i class="fas fa-search" style="font-size: 48px; color: #ccc; margin-bottom: 16px;"></i>
                 <h3>没有找到匹配的内容</h3>
-                <p>试试其他关键词，或者查看"帮助"获取线索提示</p>
+                <p>查看"帮助"可以获取线索</p>
             </div>
         `;
         return;
