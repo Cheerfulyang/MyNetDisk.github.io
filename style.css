@@ -786,3 +786,10 @@ body {
     border-color: #4361ee;
     color: #4361ee;
 }
+
+/* 自定义样式 */
+.file-date {
+    font-size: 12px;
+    color: #666;
+    margin-top: 20px;
+}

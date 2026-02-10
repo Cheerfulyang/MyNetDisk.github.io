@@ -19,6 +19,7 @@ export const FileSystem = {
                                 id: 'report2',
                                 name: '周报.txt',
                                 type: 'file',
+                                date: '创建时间:2026-01-07  修改时间:2026-01-07',
                                 content: '本周工作正常进行中。\n明天需要提交季度总结。',
                                 size: '2KB'
                             },
@@ -26,6 +27,7 @@ export const FileSystem = {
                                 id: 'meeting2',
                                 name: '会议记录.txt',
                                 type: 'file',
+                                date: '创建时间:2026-01-07  修改时间:2026-01-07',
                                 content: '会议主题：项目进展\n\n讨论了关于新功能开发的时间表。\n备注：密码可能藏在日常用语中。',
                                 size: '5KB'
                             }
@@ -35,6 +37,7 @@ export const FileSystem = {
                         id: 'report',
                         name: '周报.txt',
                         type: 'file',
+                        date: '创建时间:2026-01-07  修改时间:2026-01-07',
                         content: '本周工作正常进行中。\n明天需要提交季度总结。',
                         size: '2KB'
                     },
@@ -42,6 +45,7 @@ export const FileSystem = {
                         id: 'meeting',
                         name: '会议记录.txt',
                         type: 'file',
+                        date: '创建时间:2026-01-07  修改时间:2026-01-07',
                         content: '会议主题：项目进展\n\n讨论了关于新功能开发的时间表。\n备注：密码可能藏在日常用语中。',
                         size: '5KB'
                     }
@@ -74,6 +78,7 @@ export const FileSystem = {
                                 id: 'photo',
                                 name: '老照片.jpg',
                                 type: 'file',
+                                date: '创建时间:2026-01-07  修改时间:2026-01-07',
                                 content: `
                                     <div class="image-description">
                                         <p>一张泛黄的老照片，背面写着：1984年夏</p>
@@ -91,6 +96,7 @@ export const FileSystem = {
                         id: 'notes',
                         name: '笔记.txt',
                         type: 'file',
+                        date: '创建时间:2026-01-07  修改时间:2026-01-07',
                         content: '突然想起小时候的暗号："月光下的约定"\n这个好像可以用来解锁什么...',
                         size: '3KB'
                     }
@@ -124,6 +130,7 @@ export const FileSystem = {
                                 id: 'secret1',
                                 name: '真相.txt',
                                 type: 'file',
+                                date: '创建时间:2026-01-07  修改时间:2026-01-07',
                                 content: '恭喜你找到了第一个隐藏文件！\n\n下一个线索：在回收站里寻找"被遗忘的角落"',
                                 size: '1KB'
                             }
@@ -133,6 +140,7 @@ export const FileSystem = {
                         id: 'secret_diary',
                         name: '日记1.txt',
                         type: 'file',
+                        date: '创建时间:2026-01-07  修改时间:2026-01-07',
                         encrypted: true,          // 标记为加密文件
                         encryption: {
                             type: 'password',     // 加密类型：密码
@@ -167,6 +175,7 @@ export const FileSystem = {
                         id: 'deleted',
                         name: '已删除文件.txt',
                         type: 'file',
+                        date: '创建时间:2026-01-06  修改时间:2026-01-07',
                         content: '这个文件应该被清理了，但似乎还留在这里。',
                         size: '1KB'
                     },
@@ -184,6 +193,7 @@ export const FileSystem = {
                                 id: 'final',
                                 name: '最终线索.txt',
                                 type: 'file',
+                                date: '创建时间:2026-01-07  修改时间:2026-01-07',
                                 hidden: true,
                                 unlockCondition: {
                                     type: 'keyword',
@@ -200,9 +210,16 @@ export const FileSystem = {
                 id: 'introduction',
                 name: '网盘使用说明.txt',
                 type: 'file',
-                content: '费米网盘使用说明：\n\n欢迎使用费米网盘！这是一个模拟云端存储的互动游戏。\
-                    \n在这里，你可以通过搜索关键词来解锁隐藏的文件和秘密。试着探索不同的文件夹，寻找线索，完成谜题吧！\
-                    \n\n搜索功能使用说明:\n- 在搜索栏输入关键词，如"月光"、"被遗忘的角落"等，看看会发生什么！',
+                date: '创建时间:2026-01-07  修改时间:2026-01-07',
+                content: `
+                            <div>
+                                <h3>费米网盘使用说明</h3>
+                                <p>欢迎使用费米网盘！这是一个模拟云端存储的互动游戏。</p>
+                                <p>在这里，你可以通过搜索关键词来解锁隐藏的文件和秘密。试着探索不同的文件夹，寻找线索，完成谜题吧！</p>
+                                <h3>搜索功能使用说明:</h3>
+                                <p>在搜索栏输入关键词，如"月光"、"被遗忘的角落"等，看看会发生什么！</p>
+                            </div>
+                        `,
                 originalContent: '真实内容在这里...', // 解密后的实际内容
                 size: '12KB'
             },

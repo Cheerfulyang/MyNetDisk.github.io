@@ -54,7 +54,7 @@ function createFilePreviewContent(file) {
     const isHTML = /^<[\s\S]*>$/m.test(content) && content.includes('<') && content.includes('>');
     
     if (isHTML) {
-        return content;
+        return content + `<div class="file-date">${file.date}</div>`;
     } else {
         const escapedContent = content
             .replace(/&/g, '&amp;')
@@ -62,7 +62,7 @@ function createFilePreviewContent(file) {
             .replace(/>/g, '&gt;');
         
         const withBreaks = escapedContent.replace(/\n/g, '<br>');
-        return `<div class="text-content"><p style="white-space: pre-wrap;">${withBreaks}</p></div>`;
+        return `<div class="text-content"><p style="white-space: pre-wrap;">${withBreaks}</p></div>` + `<div class="file-date">${file.date}</div>`;
     }
 }
 
